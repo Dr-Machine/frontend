@@ -1,2 +1,2 @@
 # frontend
-Front-end for Dr. Machine
+Frontend for Dr. Machine
