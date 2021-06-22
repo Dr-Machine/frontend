@@ -1,0 +1,19 @@
+.login--button {
+  background-color: var(--bs-bulma-primary);
+  border-radius: 30px;
+  /* border-color: 1px solid var(--bs-bulma-primary); */
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: transparent;
+  color: white;
+}
+
+.login--button:hover {
+  background-color: var(--bs-bulma-primary);
+  border-color: none;
+  color: white;
+  border-radius: 30px;
+  padding: 10px 20px;
+  
+}
