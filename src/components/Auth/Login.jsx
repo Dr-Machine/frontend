@@ -5,8 +5,8 @@ import { useHistory } from "react-router-dom";
 import Alert from "@material-ui/lab/Alert";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-// import { axios } from "../../utils/axiosPublic";
-import axios from "axios"
+import { axios } from "../../utils/axiosPublic";
+// import axios from "axios"
 
 const Login = () => {
   const history = useHistory();
@@ -47,7 +47,7 @@ const Login = () => {
         try {
           // <<<<<<< HEAD:src/app/modules/Auth/pages/Login.jsx
           axios
-            .post("http://192.168.10.151:8585/api/auth/jwt/create/", credentials)
+            .post("/api/auth/jwt/create/", credentials)
             .then((res) => {
               console.log(res);
 
