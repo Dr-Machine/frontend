@@ -4,6 +4,9 @@ import PersonIcon from "@material-ui/icons/Person";
 import "./Navbar.css";
 
 const Navbar = () => {
+  const divmaker = () => {
+    console.log("Hello world");
+  };
   return (
     <nav class="navbar navbar-expand-sm navbar-dark fixed-top" id="mainNav">
       <div class="container">
