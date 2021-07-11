@@ -13,7 +13,7 @@ const Account = ({history})=>{
         if(localStorage.getItem("token")){
             history.push("/dashboard")
         }
-    }, [history])
+    }, [localStorage.getItem("token")])
     return (
         <div className="account">
             <Navbar/>

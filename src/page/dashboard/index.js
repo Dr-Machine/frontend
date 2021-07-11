@@ -42,17 +42,17 @@ const Dashboard =({ match ,history })=>{
                             </div>
                             <ul className="nav flex-column">
                                 <li className={`nav-item has-submenu ${active===1?"show":""}`}>
-                                    <Link to="/" className="nav-link" onClick={(ev)=>onclick(ev,1)}>service 1</Link>
+                                    <Link to="/" className="nav-link" onClick={(ev)=>onclick(ev,1)}>CT_LIS</Link>
                                     <ul className="submenu collapse">
-                                        <li><NavLink className="nav-link" to="/dashboard/service/1/upload">upload</NavLink></li>
-                                        <li><NavLink className="nav-link" to="/dashboard/service/1/show">show</NavLink></li>
+                                        <li><NavLink className="nav-link" to={`/dashboard/service/CT_LIS/upload`}>upload</NavLink></li>
+                                        <li><NavLink className="nav-link" to="/dashboard/service/CT_LIS/show">show</NavLink></li>
                                     </ul>
                                 </li>
                                 <li className={`nav-item has-submenu ${active===2?"show":""}`}>
-                                     <Link to="/" className="nav-link" onClick={(ev)=>onclick(ev,2)}>service 2</Link>
+                                     <Link to="/" className="nav-link" onClick={(ev)=>onclick(ev,2)}>ai_corona</Link>
                                     <ul className="submenu collapse">
-                                    <li><NavLink className="nav-link" to="/dashboard/service/2/upload">upload</NavLink></li>
-                                        <li><NavLink className="nav-link" to="/dashboard/service/2/show">show</NavLink></li>
+                                    <li><NavLink className="nav-link" to="/dashboard/service/ai_corona/upload">upload</NavLink></li>
+                                        <li><NavLink className="nav-link" to="/dashboard/service/ai_corona/show">show</NavLink></li>
                                     </ul>
                                 </li>
                             </ul>

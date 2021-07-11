@@ -1,15 +1,48 @@
 import React , {useState} from 'react';
 import {Link} from 'react-router-dom'
-const Login = ()=>{
+import axios from 'axios';
+import {baseurl} from '../../index'
+const Login = ({history})=>{
     const [form, setform] = useState({})
     const handleSubmit=(event)=>{
         event.preventDefault();
-        localStorage.setItem("token",form.email)
+        axios.post(`${baseurl}/auth/jwt/create/`, form)
+        .then(function (response) {
+            if(response.status===200){
+                localStorage.setItem("token",response.data.access);
+                fetchUser()
+                history.push("/dashboard");
+            }
+            else{
+                return Promise.reject(response.body.detail)
+            }
+        })
+        .catch(function (error) {
+            alert(error)
+        });
     }
     const handleChange = (event)=>{
         const name = event.target.name;
         const value = event.target.value;
         setform({...form,[name]:value})
+    }
+    const fetchUser = ()=>{
+        axios.get(`${baseurl}/accounts/info/`,{
+            headers : {
+                Authorization : "Bearer "+localStorage.getItem("token"),
+            }
+        })
+        .then(function (response) {
+            if(response.status===200){
+                localStorage.setItem("user",response.data.id)
+            }
+            else{
+                return Promise.reject(response.body.detail)
+            }
+        })
+        .catch(function (error) {
+            alert(error)
+        })
     }
     return (
         <div className="login">

@@ -10,8 +10,8 @@ import Show from './Service/Show';
 const Service =({ match })=>{
     return (
         <div className="service">
-            <Route path={`${match.url}/upload`} component={Upload} />
-            <Route path={`${match.url}/show`} component={Show} />
+            <Route path={`${match.url}/upload`}><Upload name={match.params.id}/></Route>
+            <Route path={`${match.url}/show`}><Show name={match.params.id}/></Route>
         </div>
     )
 }
