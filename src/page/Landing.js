@@ -22,7 +22,7 @@ const Landing = ()=>{
                     <div className="d-flex flex-column align-items-center">
                         <h3 className="title">Dr. Machine</h3>
                         <p className="text">Intelligent Medical Imaging</p>
-                        <button type="button" class="btn btn-success mt-4"> Get started!</button>
+                        <button type="button" class="btn mt-4 start">Get started!</button>
                     </div>
                 </div>
                 <div  className="section one">

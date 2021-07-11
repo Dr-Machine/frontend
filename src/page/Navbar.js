@@ -4,7 +4,7 @@ import {Link,NavLink} from 'react-router-dom';
 
 const Navbar =({show,fullpage})=>{
     return(
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav className="navbar navbar-expand-lg">
         <div className="container-fluid">
             <Link className="navbar-brand" to="/" onClick={()=>fullpage?.moveTo("header")}>Dr. Machine</Link>
             {show &&
@@ -26,7 +26,7 @@ const Navbar =({show,fullpage})=>{
                         <NavLink className="nav-link" to="/#contact" onClick={()=>fullpage.moveTo("contact")}>Contact</NavLink>
                     </li>
                     <li className="nav-item">
-                        <NavLink className="nav-link btn btn-outline-success px-4" to="/login">log in</NavLink>
+                        <NavLink className="nav-link btn btn-outline px-4" to="/login">Log in</NavLink>
                     </li>
                 </ul>
             </div>
