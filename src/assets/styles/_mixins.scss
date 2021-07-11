@@ -1,0 +1,361 @@
+@function str-replace($string, $search, $replace: "") {
+	$index: str-index($string, $search);
+
+	@if $index {
+		@return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+	}
+
+	@return $string;
+}
+
+// =============================================================================
+// Font Face
+// =============================================================================
+
+@mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff ttf) {
+	$src: null;
+
+	$extmods: (
+		eot: "?",
+		svg: "#" + str-replace($name, " ", "_")
+	);
+
+	$formats: (
+		otf: "opentype",
+		ttf: "truetype"
+	);
+
+	@each $ext in $exts {
+		$extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext);
+		$format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+		$src: append($src, url(quote($path + "." + $extmod)) format(quote($format)), comma);
+	}
+
+	@font-face {
+		font-family: quote($name);
+		font-style: $style;
+		font-weight: $weight;
+		src: $src;
+	}
+}
+@mixin width($padding:0px,$all:100%)
+{
+    width: -webkit-calc(#{$all} - #{$padding});
+    width: -moz-calc(#{$all} - #{$padding});
+    width: calc(#{$all} - #{$padding});
+}
+@mixin height($padding:0px,$all:100%)
+{
+    height: -webkit-calc(#{$all} - #{$padding});
+    height: -moz-calc(#{$all} - #{$padding});
+    height: calc(#{$all} - #{$padding});
+}
+@mixin transition($transition: 0.3s,$type: all,$effect: ease-in-out) {
+    -webkit-transition: $type $transition $effect;
+    -moz-transition: $type $transition $effect;
+    -o-transition: $type $transition $effect;
+    transition: $type $transition $effect;
+}
+
+@mixin link($color:$basetxtColor,$hover:$color) {
+    color: $color;
+
+    &:hover {
+        color: darken($hover,10%);
+    }
+    &:active {
+        color: darken($hover,5%);
+    }
+}
+
+@mixin background($color: $baseColor2,$bg: $baseColor,$show:1,$hcolor: $color,$hover: $bg) {
+    color: $color;
+    background-color: $bg;
+    @if $show == 1 {
+        &:disabled.disabled.hover,&:disabled.disabled:hover{
+            color: $color;
+        }
+        &:not(:disabled):not(.disabled).hover,&:not(:disabled):not(.disabled):hover {
+            color: darken($hcolor,5%);
+            background-color: darken($hover,5%);
+        }
+        &:focus {
+            box-shadow: 0 0 0 0.2rem rgba($hcolor,.5);
+        }
+        &:not(:disabled):not(.disabled).active,&:not(:disabled):not(.disabled):active {
+            color: saturate($hcolor,10%);
+            background-color: darken($hover,10%);
+        }
+
+    }
+
+
+}
+
+
+@mixin circled($lt: rem(6),$rt: rem(6),$br: $lt,$bl: $rt) {
+    -webkit-border-radius: $lt $rt $br $bl;
+    -moz-border-radius: $lt $rt $br $bl;
+    -o-transition: $lt $rt $br $bl;
+    border-radius: $lt $rt $br $bl;
+}
+
+@mixin i($font-size:0,$display:inline-block,$center:0){
+    display:$display;
+    font-size:(0 + $font-size);
+    &:before {
+        line-height: 1;
+        vertical-align: middle;
+        @if $center == 1
+        {
+            position:absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            -moz-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            -o-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+    }
+}
+
+@mixin border($color: $themeColor,$show: 1,$hoverColor:$color,$width: 1px,$type: solid,$hoverWidth:$width) {
+    border: $width $type $color;
+
+    @if $show == 1 {
+        &:not(:disabled):not(.disabled).hover,&:not(:disabled):not(.disabled):hover {
+            border-color: darken($hoverColor,5%);
+            border-width: $hoverWidth;
+        }
+        &:focus {
+            border-color: darken($hoverColor,5%);
+            border-width: $hoverWidth;
+        }
+        &:not(:disabled):not(.disabled).active,&:not(:disabled):not(.disabled):active {
+            border-color: darken($hoverColor,5%);
+            border-width: $hoverWidth;
+        }
+    }
+}
+@mixin borderWidth($top: 0,$right: 0,$bottom: $top,$left: $right) {
+    @if $top >= 0 {
+        border-top-width: $top;
+    }
+
+    @if $right >= 0 {
+        border-right-width: $right;
+    }
+
+    @if $bottom >= 0 {
+        border-bottom-width: $bottom;
+    }
+    @else if $top != 0 {
+        border-bottom-width: $top;
+    }
+
+    @if $left >= 0 {
+        border-left-width: $left;
+    }
+    @else if $right >= 0 {
+        border-left-width: $right;
+    }
+}
+
+@mixin linear-gradient($angle, $color-stops...) {
+    $_angle-with-vendor-prefix: "";
+    $_angle: "";
+    @if $angle == "to top" or $angle == "bottom" {
+        $_angle-with-vendor-prefix: bottom;
+        $_angle: to top;
+    } @else if $angle == "to right" or $angle == "left" {
+        $_angle-with-vendor-prefix: left;
+        $_angle: to right;
+    } @else if $angle == "to bottom" or $angle == "top" {
+        $_angle-with-vendor-prefix: top;
+        $_angle: to bottom;
+    } @else if $angle == "to left" or $angle == "right" {
+        $_angle-with-vendor-prefix: right;
+        $_angle: to left;
+    } @else if $angle == "to top right" or $angle == "bottom left" {
+        $_angle-with-vendor-prefix: bottom left;
+        $_angle: to top right;
+    } @else if $angle == "to bottom right" or $angle == "top left" {
+        $_angle-with-vendor-prefix: top left;
+        $_angle: to bottom right;
+    } @else if $angle == "to bottom left" or $angle == "top right" {
+        $_angle-with-vendor-prefix: top right;
+        $_angle: to bottom left;
+    } @else if $angle == "to top left" or $angle == "bottom right" {
+        $_angle-with-vendor-prefix: bottom right;
+        $_angle: to top left;
+    } @else {
+        $_angle-with-vendor-prefix: $angle % 360;
+        $_angle: (90 - $angle) % 360;
+    }
+    background: -webkit-linear-gradient($_angle-with-vendor-prefix, $color-stops);
+    background: -moz-linear-gradient($_angle-with-vendor-prefix, $color-stops);
+    background: -o-linear-gradient($_angle-with-vendor-prefix, $color-stops);
+    background: linear-gradient($_angle, $color-stops);
+}
+
+@mixin middle
+{
+    display: table;
+    display: flex;
+	align-items: center;
+    flex-wrap: wrap;
+    & > *
+    {
+        display: table-cell;
+        vertical-align: middle;
+    }
+}
+
+@mixin img-center($width:100%,$height:auto,$position:relative)
+{
+    position: $position;
+    overflow: hidden;
+    img {
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        @if $width == 100%
+        {
+            max-width: 100%;
+        }@else{
+            max-width: none;
+        }
+        width: $width;
+        height: $height;
+    }
+}
+@mixin shadow($string: 0 8px 32px 7px rgba(darken(#005aab,20%),0.08))
+{
+    box-shadow:$string;
+}
+$baseFontSize : 16;
+@function rem($pixels, $context: $baseFontSize) {
+    @if (unitless($pixels)) {
+        $pixels: $pixels * 1px;
+    }
+
+    @if (unitless($context)) {
+        $context: $context * 1px;
+    }
+
+    @return $pixels / $context * 1rem;
+}
+@function svg-url($svg){
+    //
+    //  Add missing namespace
+    //
+    @if not str-index($svg,xmlns) {
+        $svg: str-replace($svg, '<svg','<svg xmlns="http://www.w3.org/2000/svg"');
+    }
+    //
+    //  Chunk up string in order to avoid
+    //  "stack level too deep" error
+    //
+    $encoded:'';
+    $slice: 2000;
+    $index: 0;
+    $loops: ceil(str-length($svg)/$slice);
+    @for $i from 1 through $loops {
+        $chunk: str-slice($svg, $index, $index + $slice - 1);
+        //
+        //   Encode
+        //
+        $chunk: str-replace($chunk, '"', '\'');
+        $chunk: str-replace($chunk, '%', '%25');
+        $chunk: str-replace($chunk, '#', '%23');
+        $chunk: str-replace($chunk, '{', '%7B');
+        $chunk: str-replace($chunk, '}', '%7D');
+        $chunk: str-replace($chunk, '<', '%3C');
+        $chunk: str-replace($chunk, '>', '%3E');
+
+        //
+        //    The maybe list
+        //
+        //    Keep size and compile time down
+        //    ... only add on documented fail
+        //
+        //  $chunk: str-replace($chunk, '&', '%26');
+        //  $chunk: str-replace($chunk, '|', '%7C');
+        //  $chunk: str-replace($chunk, '[', '%5B');
+        //  $chunk: str-replace($chunk, ']', '%5D');
+        //  $chunk: str-replace($chunk, '^', '%5E');
+        //  $chunk: str-replace($chunk, '`', '%60');
+        //  $chunk: str-replace($chunk, ';', '%3B');
+        //  $chunk: str-replace($chunk, '?', '%3F');
+        //  $chunk: str-replace($chunk, ':', '%3A');
+        //  $chunk: str-replace($chunk, '@', '%40');
+        //  $chunk: str-replace($chunk, '=', '%3D');
+
+        $encoded: #{$encoded}#{$chunk};
+        $index: $index + $slice;
+    }
+    @return url("data:image/svg+xml,#{$encoded}");
+}
+
+//  Background svg mixin
+@mixin background-svg($svg){
+    background-image: svg-url($svg);
+}
+
+//  Helper function to replace characters in a string
+@function str-replace($string, $search, $replace: '') {
+    $index: str-index($string, $search);
+    @return if($index,
+            str-slice($string, 1, $index - 1) + $replace +
+        str-replace(str-slice($string, $index +
+        str-length($search)), $search, $replace),
+            $string);
+}
+
+@mixin margin-five
+{
+$num: 0;
+
+@while $num < 105 {
+    .m-r-#{$num} {
+        margin-right: $num + 0px !important;
+    }
+    .m-l-#{$num} {
+        margin-left: $num + 0px !important;
+    }
+    .m-t-#{$num} {
+        margin-top: $num + 0px !important;
+    }
+    .m-b-#{$num} {
+        margin-bottom: $num + 0px !important;
+    }
+    $num: $num + 5;
+}
+}
+@mixin padding-five
+{
+$num: 0;
+
+@while $num < 105 {
+    .p-r-#{$num} {
+        padding-right: $num + 0px !important;
+    }
+    .p-l-#{$num} {
+        padding-left: $num + 0px !important;
+    }
+    .p-t-#{$num} {
+        padding-top: $num + 0px !important;
+    }
+    .p-b-#{$num} {
+        padding-bottom: $num + 0px !important;
+    }
+    $num: $num + 5;
+}
+}
