@@ -16,7 +16,7 @@ const Account = ({history})=>{
     }, [localStorage.getItem("token")])
     return (
         <div className="account">
-            {/* <Navbar/> */}
+            <Navbar/>
             <div className="content">
                 <div className="box">
                     <div className="head">Dr. Machine</div>
