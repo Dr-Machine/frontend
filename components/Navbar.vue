@@ -118,9 +118,6 @@
 						rounded-lg
 						text-md text-white
 						border-2 border-dogegreen
-						hover:text-white
-						hover:bg-dogeblue-primary
-						hover:border-dogegreen
 						focus:text-white
 						focus:bg-dogeblue-secondary
 						focus:border-dogeblue-secondary
@@ -139,7 +136,7 @@
 import Logo from '@/components/Logo'
 
 export default {
-	name: 'TheHeader',
+	name: 'Navbar',
 	components: {
 		logo: Logo,
 	},
@@ -158,8 +155,8 @@ export default {
 		},
 		navActionClassList() {
 			return this.isSticky
-				? 'bg-dogegreen text-dogeblue-primary'
-				: 'bg-dogeblue-primary text-white'
+				? 'bg-dogegreen text-dogeblue-primary hover:text-white hover:bg-dogeblue-primary'
+				: 'bg-dogeblue-primary text-white hover:text-dogeblue-primary hover:bg-dogegreen'
 		},
 		navContentClassList() {
 			let classList = this.isSticky

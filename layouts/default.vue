@@ -1,19 +1,19 @@
 <template>
 	<div class="leading-normal tracking-normal text-white gradient">
-		<the-header />
+		<Navbar />
 		<nuxt />
-		<the-footer />
+		<Footer />
 	</div>
 </template>
 
 <script>
-import TheHeader from '@/components/TheHeader.vue'
-import TheFooter from '@/components/TheFooter.vue'
+import Navbar from '@/components/Navbar.vue'
+import Footer from '@/components/Footer.vue'
 
 export default {
 	components: {
-		'the-header': TheHeader,
-		'the-footer': TheFooter,
+		Navbar,
+		Footer,
 	},
 }
 </script>
