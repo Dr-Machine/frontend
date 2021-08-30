@@ -11,26 +11,14 @@
 						<li
 							class="mt-2 pl-1 inline-block mr-2 md:block md:mr-0"
 						>
-							<a
-								href="#"
-								class="
-									text-white
-									hover:underline
-									hover:text-dogegreen
-								"
+							<a href="#" class="text-white hover:text-gray-500"
 								>Terms of service</a
 							>
 						</li>
 						<li
 							class="mt-2 pl-1 inline-block mr-2 md:block md:mr-0"
 						>
-							<a
-								href="#"
-								class="
-									text-white
-									hover:underline
-									hover:text-dogegreen
-								"
+							<a href="#" class="text-white hover:text-gray-500"
 								>Privacy policy</a
 							>
 						</li>
@@ -46,39 +34,21 @@
 						<li
 							class="mt-2 pl-1 inline-block mr-2 md:block md:mr-0"
 						>
-							<a
-								href="#"
-								class="
-									text-white
-									hover:underline
-									hover:text-dogegreen
-								"
+							<a href="#" class="text-white hover:text-gray-500"
 								>LinkedIn</a
 							>
 						</li>
 						<li
 							class="mt-2 pl-1 inline-block mr-2 md:block md:mr-0"
 						>
-							<a
-								href="#"
-								class="
-									text-white
-									hover:underline
-									hover:text-dogegreen
-								"
+							<a href="#" class="text-white hover:text-gray-500"
 								>GitHub</a
 							>
 						</li>
 						<li
 							class="mt-2 pl-1 inline-block mr-2 md:block md:mr-0"
 						>
-							<a
-								href="#"
-								class="
-									text-white
-									hover:underline
-									hover:text-dogegreen
-								"
+							<a href="#" class="text-white hover:text-gray-500"
 								>Telegram</a
 							>
 						</li>
@@ -100,39 +70,21 @@
 						<li
 							class="mt-2 pl-1 inline-block mr-2 md:block md:mr-0"
 						>
-							<a
-								href="#"
-								class="
-									text-white
-									hover:underline
-									hover:text-dogegreen
-								"
+							<a href="#" class="text-white hover:text-gray-500"
 								>Team</a
 							>
 						</li>
 						<li
 							class="mt-2 pl-1 inline-block mr-2 md:block md:mr-0"
 						>
-							<a
-								href="#"
-								class="
-									text-white
-									hover:underline
-									hover:text-dogegreen
-								"
+							<a href="#" class="text-white hover:text-gray-500"
 								>Careers</a
 							>
 						</li>
 						<li
 							class="mt-2 pl-1 inline-block mr-2 md:block md:mr-0"
 						>
-							<a
-								href="#"
-								class="
-									text-white
-									hover:underline
-									hover:text-dogegreen
-								"
+							<a href="#" class="text-white hover:text-gray-500"
 								>Contact</a
 							>
 						</li>
