@@ -1,12 +1,19 @@
-/*
- ** TailwindCSS Configuration File
- **
- ** Docs: https://tailwindcss.com/docs/configuration
- ** Default: https://github.com/tailwindcss/tailwindcss/blob/master/stubs/defaultConfig.stub.js
- */
+const defaultTheme = require('tailwindcss/defaultTheme');
+
 module.exports = {
-  theme: {},
-  variants: {},
-  plugins: [],
-  purge: false
+	future: {
+	},
+	purge: [],
+	theme: {
+		extend: {
+			colors: {
+				dogeblueprimary: '#0B0E11',
+				dogebluesecondry: '#151A21',
+				dogegreen: '#00D1B2',
+				dogered: '#FD4D4D',
+			},
+		},
+	},
+	variants: {},
+	plugins: [],
 }

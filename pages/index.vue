@@ -1,11 +1,11 @@
 <template>
-  <div>
-    <hero />
-    <features />
-    <teasers />
-    <prices />
-    <call-to-action />
-  </div>
+	<div>
+		<hero />
+		<features />
+		<teasers />
+		<prices />
+		<call-to-action />
+	</div>
 </template>
 
 <script>
@@ -16,13 +16,13 @@ import Prices from '@/components/Prices'
 import CallToAction from '@/components/CallToAction'
 
 export default {
-  name: 'LandingPage',
-  components: {
-    hero: Hero,
-    features: Features,
-    teasers: Teasers,
-    prices: Prices,
-    'call-to-action': CallToAction
-  }
+	name: 'LandingPage',
+	components: {
+		hero: Hero,
+		features: Features,
+		teasers: Teasers,
+		prices: Prices,
+		'call-to-action': CallToAction,
+	},
 }
 </script>

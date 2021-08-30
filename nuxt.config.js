@@ -1,61 +1,47 @@
 export default {
-  mode: 'universal',
-  /*
-   ** Headers of the page
-   */
-  head: {
-    title: process.env.npm_package_name || '',
-    meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      {
-        hid: 'description',
-        name: 'description',
-        content: process.env.npm_package_description || ''
-      }
-    ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
-  },
-  /*
-   ** Customize the progress-bar color
-   */
-  loading: { color: '#fff' },
-  /*
-   ** Global CSS
-   */
-  css: [],
-  /*
-   ** Plugins to load before mounting the App
-   */
-  plugins: [],
-  /*
-   ** Nuxt.js dev-modules
-   */
-  buildModules: [
-    // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
-    '@nuxtjs/tailwindcss'
-  ],
-  /*
-   ** Nuxt.js modules
-   */
-  modules: ['nuxt-svg-loader'],
-  purgeCSS: {
-    whitelist: ['hidden'],
-    whitelistPatterns: [/md:w-[1-6]/]
-  },
-  /*
-   ** Build configuration
-   */
-  build: {
-    /*
-     ** You can extend webpack config here
-     */
-    extend(config, ctx) {
-      loaders: {
-        file: {
-          esModule: false
-        }
-      }
-    }
-  }
+	mode: 'universal',
+
+	head: {
+		title: 'Dr. Machine',
+		meta: [
+			{ charset: 'utf-8' },
+			{ name: 'viewport', content: 'width=device-width, initial-scale=1' },
+			{
+				hid: 'description',
+				name: 'description',
+				content: ''
+			}
+		],
+		link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+	},
+
+	loading: { color: '#00D1B2' },
+
+	css: [],
+
+	plugins: [],
+
+	buildModules: [
+		'@nuxtjs/tailwindcss'
+	],
+
+	modules: ['nuxt-svg-loader'],
+	purgeCSS: {
+		whitelist: ['hidden'],
+		whitelistPatterns: [/md:w-[1-6]/]
+	},
+
+	build: {
+		extend(config, ctx) {
+			loaders: {
+				file: {
+					esModule: false
+				}
+			}
+		}
+	},
+
+	server: {
+		port: 5000
+	}
 }
