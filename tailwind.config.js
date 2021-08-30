@@ -7,8 +7,10 @@ module.exports = {
 	theme: {
 		extend: {
 			colors: {
-				dogeblueprimary: '#0B0E11',
-				dogebluesecondry: '#151A21',
+				dogeblue: {
+					primary: '#0B0E11',
+					secondary: '#151A21',
+				},
 				dogegreen: '#00D1B2',
 				dogered: '#FD4D4D',
 			},
