@@ -1,54 +1,24 @@
 <template>
 	<!-- component -->
-	<div
-		class="bg-no-repeat bg-cover bg-center relative"
-		style="
-			background-image: url(https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1951&amp;q=80);
-		"
-	>
-		<div
-			class="
-				absolute
-				bg-gradient-to-b
-				from-green-500
-				to-green-400
-				opacity-75
-				inset-0
-				z-0
-			"
-		></div>
-		<div class="min-h-screen sm:flex sm:flex-row mx-0 justify-center">
-			<div
-				class="
-					flex-col flex
-					self-center
-					p-10
-					sm:max-w-5xl
-					xl:max-w-2xl
-					z-10
-				"
-			>
-				<div class="self-start hidden lg:flex flex-col text-white">
-					<img src="" class="mb-3" />
-					<h1 class="mb-3 font-bold text-5xl">
-						Hi 👋 Welcome Back Aji
+	<div class="h-screen bg-dogeblue-primary bg-cover">
+		<div class="flex flex-row h-full justify-center">
+			<div class="flex justify-center self-center">
+				<div class="w-100 mx-4 p-12 rounded-lg bg-white">
+					<h1 class="font-bold text-4xl text-center md:text-5xl">
+						<a href="/">Dr. Machine</a>
 					</h1>
-					<p class="pr-3">
-						Lorem ipsum is placeholder text commonly used in the
-						graphic, print, and publishing industries for previewing
-						layouts and visual mockups
-					</p>
-				</div>
-			</div>
-			<div class="flex justify-center self-center z-10">
-				<div class="p-12 bg-white mx-auto rounded-2xl w-100">
-					<div class="mb-4">
-						<h3 class="font-semibold text-2xl text-gray-800">
-							Sign In
+					<p class="mb-4 text-center">Intelligent Medical Imaging</p>
+					<hr />
+					<div class="my-4">
+						<h3
+							class="
+								font-semibold
+								text-center text-1xl text-gray-800
+								md:text-2xl
+							"
+						>
+							Log in to your account
 						</h3>
-						<p class="text-gray-500">
-							Please sign in to your account.
-						</p>
 					</div>
 					<div class="space-y-5">
 						<div class="space-y-2">
@@ -70,10 +40,10 @@
 									border border-gray-300
 									rounded-lg
 									focus:outline-none
-									focus:border-green-400
+									focus:border-dogegreen
 								"
-								type=""
-								placeholder="mail@gmail.com"
+								type="email"
+								placeholder="email@domain.com"
 							/>
 						</div>
 						<div class="space-y-2">
@@ -98,10 +68,10 @@
 									border border-gray-300
 									rounded-lg
 									focus:outline-none
-									focus:border-green-400
+									focus:border-dogegreen
 								"
-								type=""
-								placeholder="Enter your password"
+								type="password"
+								placeholder="************"
 							/>
 						</div>
 						<div class="flex items-center justify-between">
@@ -123,13 +93,13 @@
 									for="remember_me"
 									class="ml-2 block text-sm text-gray-800"
 								>
-									Remember me
+									Remember
 								</label>
 							</div>
-							<div class="text-sm">
+							<div class="text-sm text-center">
 								<a
 									href="#"
-									class="text-green-400 hover:text-green-500"
+									class="text-dogegreen hover:underline"
 								>
 									Forgot your password?
 								</a>
@@ -142,35 +112,28 @@
 									w-full
 									flex
 									justify-center
-									bg-green-400
-									hover:bg-green-500
-									text-gray-100
+									bg-dogegreen
+									hover:bg-dogeblue-primary
+									hover:text-dogegreen
+									text-white
 									p-3
-									rounded-full
+									rounded-lg
 									tracking-wide
 									font-semibold
 									shadow-lg
 									cursor-pointer
-									transition
-									ease-in
-									duration-500
 								"
 							>
-								Sign in
+								Log in
 							</button>
 						</div>
 					</div>
-					<div class="pt-5 text-center text-gray-400 text-xs">
+					<div class="pt-5 text-center text-dogeblue-primary text-xs">
 						<span>
-							Copyright © 2021-2022
-							<a
-								href="https://codepen.io/uidesignhub"
-								rel=""
-								target="_blank"
-								title="Ajimon"
-								class="text-green hover:text-green-500"
-								>AJI</a
-							></span
+							Copyright 2021
+							<span class="text-dogegreen font-bold"
+								>Dr. Machine</span
+							>.</span
 						>
 					</div>
 				</div>

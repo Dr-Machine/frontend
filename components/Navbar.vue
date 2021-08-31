@@ -109,23 +109,25 @@
 						>
 					</li>
 				</ul>
-				<button
-					:class="navActionClassList"
-					class="
-						mx-auto
-						px-4
-						py-2
-						rounded-lg
-						text-md text-white
-						border-2 border-dogegreen
-						focus:text-white
-						focus:bg-dogeblue-secondary
-						focus:border-dogeblue-secondary
-						lg:mt-0
-					"
-				>
-					Log in
-				</button>
+				<a href="/login">
+					<button
+						:class="navActionClassList"
+						class="
+							mx-auto
+							px-4
+							py-2
+							rounded-lg
+							text-md text-white
+							border-2 border-dogegreen
+							focus:text-white
+							focus:bg-dogeblue-secondary
+							focus:border-dogeblue-secondary
+							lg:mt-0
+						"
+					>
+						Log in
+					</button>
+				</a>
 			</div>
 		</div>
 		<hr class="border-b border-gray-100 opacity-25 my-0 py-0" />
