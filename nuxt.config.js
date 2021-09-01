@@ -23,6 +23,7 @@ export default {
 	],
 
 	plugins: [
+		{ src: '~/plugins/backtotop', mode: 'client' },
 		{ src: '~/plugins/slick', mode: 'client' }
 	],
 

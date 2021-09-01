@@ -1,10 +1,11 @@
 <template>
-	<section class="bg-white border-b py-8">
-		<div class="container w-screen mx-auto flex flex-wrap py-4">
+	<section class="bg-white border-b pt-5 pb-8" id="team">
+		<div class="container w-screen mx-auto flex flex-wrap pb-8">
 			<h1
 				class="
 					w-full
-					my-2
+					mt-8
+					mb-1
 					text-5xl
 					font-bold
 					leading-tight
@@ -42,7 +43,7 @@
 									/>
 								</div>
 								<div class="p-4 bg-dogeblue-secondary">
-									<h1 class="font-bold text-2xl">
+									<h1 class="p-1 font-bold text-2xl">
 										{{ member.name }}
 									</h1>
 									<h1

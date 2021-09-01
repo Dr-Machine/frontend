@@ -11,8 +11,9 @@
 				justify-between
 			"
 		>
-			<div class="flex pl-4 items-center">
-				<logo :isStickable="true" :isSticky="isSticky" />
+			<div class="flex items-center pl-4 md:pl-0">
+				<!-- <logo :isStickable="true" :isSticky="isSticky" /> -->
+				<h1 class="font-bold text-2xl">Dr. Machine</h1>
 			</div>
 			<div class="block lg:hidden pr-4">
 				<button
@@ -69,16 +70,16 @@
 							>Services</a
 						>
 					</li>
-					<li class="mr-3">
+					<li class="mr-3" @click="scrollTo('team')">
 						<a
 							class="
 								px-4
 								py-2
+								cursor-pointer
 								inline-block
 								text-white
 								hover:text-dogegreen
 							"
-							href="#"
 							>Team</a
 						>
 					</li>
@@ -179,6 +180,10 @@ export default {
 		},
 		onToggleClick() {
 			this.isOpen = !this.isOpen
+		},
+		scrollTo(id) {
+			var element = document.getElementById(id)
+			element.scrollIntoView({ behavior: 'smooth' })
 		},
 	},
 	mounted() {

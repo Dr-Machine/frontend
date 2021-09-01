@@ -1,5 +1,8 @@
 <template>
 	<div>
+		<client-only>
+			<back-to-top text="Back to top" visibleoffset="100"></back-to-top>
+		</client-only>
 		<hero />
 		<features />
 		<team />
