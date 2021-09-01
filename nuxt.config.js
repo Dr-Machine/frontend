@@ -17,9 +17,14 @@ export default {
 
 	loading: { color: '#00D1B2' },
 
-	css: [],
+	css: [
+		'slick-carousel/slick/slick.css',
+		'slick-carousel/slick/slick-theme.css'
+	],
 
-	plugins: [],
+	plugins: [
+		{ src: '~/plugins/slick', mode: 'client' }
+	],
 
 	buildModules: [
 		'@nuxtjs/tailwindcss'

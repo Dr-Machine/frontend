@@ -1,6 +1,6 @@
 <template>
 	<section class="bg-white border-b py-8">
-		<div class="container w-screen mx-auto flex flex-wrap py-4">
+		<div class="container mx-auto flex flex-wrap py-4">
 			<h1
 				class="
 					w-full
@@ -11,16 +11,52 @@
 					text-center text-gray-800
 				"
 			>
-				Team
+				Title
 			</h1>
-			<div class="w-full">
+			<div class="w-8 mb-4">
+				<div
+					class="
+						h-1
+						mx-auto
+						gradient
+						w-64
+						opacity-25
+						my-0
+						py-0
+						rounded-t
+					"
+				></div>
+			</div>
+			<div class="w-full bg-dogegreen">
 				<client-only>
 					<slick :options="slickOptions">
+						<!-- <div
+					v-for="(member, index) in team"
+					:key="index"
+					class="img-wrapper"
+				>
+					{{ member.name }}
+					<img :src="member.image" />
+				</div> -->
 						<div
 							v-for="(member, index) in team"
 							:key="index"
 							class="px-3 py-3"
 						>
+							<!-- <teaser-column :rows="3" action="Action">
+								<template v-slot:overline
+									>xGETTING STARTED</template
+								>
+								<template v-slot:headline
+									>Lorem ipsum dolor sit amet</template
+								>
+								<template v-slot:content
+									>Lorem ipsum dolor sit amet, consectetur
+									adipiscing elit. Aliquam at ipsum eu nunc
+									commodo posuere et sit amet
+									ligula.</template
+								>
+							</teaser-column> -->
 							<div
 								class="
 									w-80
@@ -99,8 +135,12 @@
 </template>
 
 <script>
+import TeaserColumn from '@/components/TeaserColumn'
+
 export default {
-	name: 'Team',
+	components: {
+		'teaser-column': TeaserColumn,
+	},
 	data() {
 		return {
 			team: [
@@ -120,14 +160,14 @@ export default {
 				},
 				{
 					image: '2.jpg',
-					name: 'Bardia Rahmatian',
+					name: 'Bardia Rahmati',
 					education: 'BEc. Economics',
 					linkedin: '',
 					github: '',
 				},
 				{
 					image: '3.jpg',
-					name: 'M. Reza Nazeazdeh',
+					name: 'Reza Nazeazdeh',
 					education: 'PhD. Bioelectric',
 					linkedin: '',
 					github: '',
@@ -136,24 +176,15 @@ export default {
 			slickOptions: {
 				centerMode: true,
 				centerPadding: '60px',
-				slidesToShow: 4,
+				slidesToShow: 3,
 				responsive: [
-					{
-						breakpoint: 1024,
-						settings: {
-							arrows: false,
-							centerMode: true,
-							centerPadding: '40px',
-							slidesToShow: 2,
-						},
-					},
 					{
 						breakpoint: 768,
 						settings: {
 							arrows: false,
 							centerMode: true,
 							centerPadding: '40px',
-							slidesToShow: 1,
+							slidesToShow: 3,
 						},
 					},
 					{
@@ -171,3 +202,15 @@ export default {
 	},
 }
 </script>
+
+<style>
+.carousel-wrapper {
+	padding: 40px;
+}
+.img-wrapper img {
+	margin: auto;
+	width: 200px;
+	height: 100px;
+	background-image: linear-gradient(gray 100%, transparent 0);
+}
+</style>

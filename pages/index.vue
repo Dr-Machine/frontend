@@ -2,7 +2,7 @@
 	<div>
 		<hero />
 		<features />
-		<teasers />
+		<team />
 		<prices />
 		<call-to-action />
 	</div>
@@ -14,6 +14,7 @@ import Features from '@/components/Features'
 import Teasers from '@/components/Teasers'
 import Prices from '@/components/Prices'
 import CallToAction from '@/components/CallToAction'
+import Team from '@/components/Team'
 
 export default {
 	name: 'LandingPage',
@@ -22,6 +23,7 @@ export default {
 		features: Features,
 		teasers: Teasers,
 		prices: Prices,
+		team: Team,
 		'call-to-action': CallToAction,
 	},
 }

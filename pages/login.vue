@@ -3,7 +3,7 @@
 	<div class="h-screen bg-dogeblue-primary bg-cover">
 		<div class="flex flex-row h-full justify-center">
 			<div class="flex justify-center self-center">
-				<div class="w-100 mx-4 p-12 rounded-lg bg-white">
+				<div class="w-100 mx-4 p-6 rounded-lg bg-white md:p-12">
 					<h1 class="font-bold text-4xl text-center md:text-5xl">
 						<a href="/">Dr. Machine</a>
 					</h1>
@@ -111,6 +111,7 @@
 								class="
 									w-full
 									flex
+									my-4
 									justify-center
 									bg-dogegreen
 									hover:bg-dogeblue-primary
@@ -126,8 +127,18 @@
 							>
 								Log in
 							</button>
+							<div class="text-sm text-center mb-3">
+								Don't have an account?
+								<a
+									href="#"
+									class="text-dogegreen hover:underline"
+								>
+									Register
+								</a>
+							</div>
 						</div>
 					</div>
+					<hr />
 					<div class="pt-5 text-center text-dogeblue-primary text-xs">
 						<span>
 							Copyright 2021

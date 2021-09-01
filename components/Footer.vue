@@ -11,14 +11,18 @@
 						<li
 							class="mt-2 pl-1 inline-block mr-2 md:block md:mr-0"
 						>
-							<a href="#" class="text-white hover:text-gray-500"
+							<a
+								href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+								class="text-white hover:text-gray-500"
 								>Terms of service</a
 							>
 						</li>
 						<li
 							class="mt-2 pl-1 inline-block mr-2 md:block md:mr-0"
 						>
-							<a href="#" class="text-white hover:text-gray-500"
+							<a
+								href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+								class="text-white hover:text-gray-500"
 								>Privacy policy</a
 							>
 						</li>
@@ -95,8 +99,7 @@
 
 			<div class="w-full mx-auto p-4 text-center text-white">
 				Copyright 2021
-				<span class="text-dogegreen font-bold">Dr. Machine</span>. All
-				rights reserved.
+				<span class="text-dogegreen font-bold">Dr. Machine</span>.
 			</div>
 		</div>
 	</footer>
