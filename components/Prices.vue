@@ -1,5 +1,5 @@
 <template>
-	<section class="bg-gray-300 py-8">
+	<section class="bg-dogeblue-secondary py-8">
 		<div class="container mx-auto px-2 pt-4 pb-12 text-gray-800">
 			<h1
 				class="
@@ -8,7 +8,7 @@
 					text-5xl
 					font-bold
 					leading-tight
-					text-center text-gray-800
+					text-white text-center
 				"
 			>
 				Pricing
@@ -39,19 +39,19 @@
 			>
 				<price
 					name="Free"
-					price="£0"
+					price="$0"
 					:limited="true"
 					:list="listFree"
 				/>
 				<price-highlighted
 					name="Basic"
-					price="x.99"
+					price="$4.99"
 					:limited="false"
 					:list="listBasic"
 				/>
 				<price
 					name="Pro"
-					price="£xx.99"
+					price="$499"
 					:limited="false"
 					:list="listPro"
 				/>
@@ -69,8 +69,8 @@ export default {
 	data() {
 		return {
 			listFree: ['Thing', 'Thing', 'Thing'],
-			listBasic: ['Thing', 'Thing', 'Thing', 'Thing'],
-			listPro: ['Thing', 'Thing', 'Thing', 'Thing', 'Thing'],
+			listBasic: ['Everything in the free plan', '24/7 year-round support', 'Thing', 'Thing'],
+			listPro: ['Everything in the basic plan', 'Thing', 'Thing', 'Thing', 'Thing'],
 		}
 	},
 	components: {

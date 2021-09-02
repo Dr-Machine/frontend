@@ -6,7 +6,7 @@
 			lg:w-1/4
 			mx-auto
 			lg:mx-0
-			rounded-none
+			rounded-lg
 			lg:rounded-l-lg
 			bg-white
 			mt-4
@@ -59,16 +59,17 @@
 						lg:mx-0
 						hover:underline
 						gradient
+						bg-gray-500
 						text-white
 						font-bold
-						rounded-full
+						rounded-lg
 						my-6
 						py-4
 						px-8
 						shadow-lg
 					"
 				>
-					Sign Up
+					Register
 				</button>
 			</div>
 		</div>
